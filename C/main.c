@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "password_gen.h"
 
 void clear_input();
 
@@ -20,6 +21,7 @@ int main() {
         clear_input(); // remove leftover newline
         break;
     }
+    setting_length(length_word);
 
     //asking the user what type of password they want
     while (1) {
@@ -35,6 +37,7 @@ int main() {
         }
         break;
     }
+    password_options(password_option);
 }
 
 void clear_input() {
