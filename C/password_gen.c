@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 //private vars
 int password_length = 0;
@@ -52,8 +53,15 @@ char** file_opener(const char* path, int* out_count) {
     return lines;
 }
 
+//getting a random item
+
+
 //main password system
 void making_password() {
+    //seed
+    srand(time(NULL));
+
+    //private vars
     int count = 0;
     char** list = NULL;
 
@@ -68,6 +76,10 @@ void making_password() {
             break;
         case 'b':
             printf("numbers only");
+            list = file_opener("data/numbers.txt", &count);
+            for (int i = 0; i < count; i++) {
+                printf("%s\n", list[i]);
+            }
             break;
         case 'c':
             printf("spcial charcaters only");
