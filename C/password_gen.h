@@ -9,4 +9,7 @@
 void setting_length(int length);
 void password_options(char option);
 
+//main password system
+void making_password();
+
 #endif //PASSWROD_GEN_4_DIFFERNT_LANGAUGES_PASSWORD_GEN_H

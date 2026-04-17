@@ -38,6 +38,9 @@ int main() {
         break;
     }
     password_options(password_option);
+
+    //main section
+    making_password();
 }
 
 void clear_input() {
