@@ -54,6 +54,10 @@ char** file_opener(const char* path, int* out_count) {
 }
 
 //getting a random item
+char random_item(char** list, int count) {
+    int index = rand() % count;
+    return list[index][0];
+}
 
 
 //main password system
@@ -64,15 +68,25 @@ void making_password() {
     //private vars
     int count = 0;
     char** list = NULL;
+    password = malloc(password_length + 1);
+
 
     //checking what the user got
     switch (password_type) {
         case 'a':
             printf("words only");
+
+            //gets the alphabet text file
             list = file_opener("data/alphabet.txt", &count);
-            for (int i = 0; i < count; i++) {
-                printf("%s\n", list[i]);
+
+            //places a random letter into the password
+            for (int i = 0; i < password_length; i++) {
+                password[i] = random_item(list, count);
             }
+            password[password_length] = '\0';
+
+            //prints out the password
+            printf("Password: %s\n", password);
             break;
         case 'b':
             printf("numbers only");
