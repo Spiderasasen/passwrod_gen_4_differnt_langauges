@@ -7,6 +7,8 @@
 using namespace std;
 
 int main() {
+    //making the class availble
+    genorator gen;
 
     //private vars
     int password_length = 0;
@@ -39,8 +41,11 @@ int main() {
     cout << "you selected: " << password_option << endl;
 
     //setting the options on the main section of the code
-    setting_length(password_length);
-    setting_option(password_option);
+    gen.setting_length(password_length);
+    gen.setting_option(password_option);
+
+    //running the main password gen
+    gen.gen_password();
 
     return 0;
 }
