@@ -95,13 +95,26 @@ void making_password() {
             break;
         case 'b':
             printf("numbers only");
+
+            //loads the list
             list = file_opener("data/numbers.txt", &count);
-            for (int i = 0; i < count; i++) {
-                printf("%s\n", list[i]);
-            }
+
+            //prints out the password
+            fill_password(password, password_length, list, count);
+
+            //prints the password
+            printf("Password: %s\n", password);
             break;
         case 'c':
             printf("spcial charcaters only");
+
+            //gets the file
+            list = file_opener("data/special.txt", &count);
+
+            //prints the password
+            fill_password(password, password_length, list, count);
+            printf("Password: %s\n", password);
+
             break;
         case 'd':
             printf("all options");
