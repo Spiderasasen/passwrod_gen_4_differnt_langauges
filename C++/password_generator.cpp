@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <random>
+#include <ctime>
 
 using namespace std;
 
@@ -51,7 +52,6 @@ string genorator::new_password(string password_type, int length, const vector<ch
     uniform_int_distribution<> dist(0, items.size() - 1);
 
     for (int i = 0; i < length; i++) {
-
         password_type.push_back(items[dist(gen)]);
     }
     return password_type;
@@ -99,7 +99,35 @@ void genorator::gen_password() {
             break;
         }
         case 'd': {
+            srand(time(NULL));
             cout << "all sections" << endl;
+
+            //data grabbers
+            vector <char> letters = open_files("data/alphabet.txt");
+            vector <char> numbers = open_files("data/numbers.txt");
+            vector <char> special_chars = open_files("data/special.txt");
+
+            for (int i = 0; i < password_length; i++) {
+                int ranNum = (rand() % 3) + 1;
+
+                switch (ranNum) {
+                    case 1:
+                        password = new_password(password, 1, letters);
+                        break;
+                    case 2:
+                        password = new_password(password, 1, numbers);
+                        break;
+                    case 3:
+                        password = new_password(password, 1, special_chars);
+                        break;
+                    default:
+                        password = new_password(password, 1, letters);
+                        break;
+                }
+            }
+
+            cout << "Your Password: " << password << endl;
+
             break;
         }
     }
