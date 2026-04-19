@@ -10,7 +10,7 @@ This project will include 5 different programming languages to help me improve t
   - the second programming language that I haven't touched in a long time, so I want to relearn some basics of this amazing language
 - Go
   - Newest programming language that I know, and it will be very interesting to program in this one
--Rust
+- Rust
   - i ony programmed in this language once, but I do want to try another small project on it again, that, and it teaches me more on the language again.
 
  # The Idea
