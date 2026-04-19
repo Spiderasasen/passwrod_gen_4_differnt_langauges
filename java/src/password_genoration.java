@@ -45,24 +45,33 @@ public class password_genoration {
         return password;
     }
 
+    private String making_password(String password, int passwordLength, String file){
+        ArrayList<Character> list = opening_files(file);
+        return password = new_password(password, passwordLength, list);
+    }
+
     public void genoration(){
         switch(passwordOption){
             case 'a':
                 System.out.println("letters only");
 
-                //opening a file
-                ArrayList<Character> list = opening_files("data/alphabet.txt");
-
-                password = new_password(password, passwordLength, list);
-
-                System.out.println(password);
+                password = making_password(password, passwordLength, "data/alphabet.txt");
+                System.out.println("Your password: " + password);
 
                 break;
             case 'b':
                 System.out.println("numbers only");
+
+                password = making_password(password, passwordLength, "data/numbers.txt");
+                System.out.println("Your password: " + password);
+
                 break;
             case 'c':
                 System.out.println("special only");
+
+                password = making_password(password, passwordLength, "data/special.txt");
+                System.out.println("Your password: " + password);
+
                 break;
             case 'd':
                 System.out.println("all sections");
