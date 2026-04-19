@@ -1,5 +1,5 @@
-# Password Generator in 5 Languages
-This project will include 5 different programming languages to help me improve these languages, and also see how each language does the same project
+# Password Generator in 6 Languages
+This project will include 6 different programming languages to help me improve these languages, and also see how each language does the same project
 
 # Programming Languages
 - C
@@ -7,7 +7,9 @@ This project will include 5 different programming languages to help me improve t
 - C++
   - A programming language that I have a love-hate relationship with, so it's going to be very interesting how this project will react with this task
 - Java
-  - the second programming language that I haven't touched in a long time, so I want to relearn some basics of this amazing language
+  - the first programming language that I haven't touched in a long time, so I want to relearn some basics of this amazing language
+- Python
+  - My main programming langague during uni, so it might be a bit easier for me to understand and code
 - Go
   - Newest programming language that I know, and it will be very interesting to program in this one
 - Rust
