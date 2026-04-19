@@ -2,6 +2,7 @@
 #include <limits>
 #include <vector>
 #include <string>
+#include "password_generator.h"
 
 using namespace std;
 
@@ -36,6 +37,10 @@ int main() {
         break;
     }
     cout << "you selected: " << password_option << endl;
+
+    //setting the options on the main section of the code
+    setting_length(password_length);
+    setting_option(password_option);
 
     return 0;
 }
