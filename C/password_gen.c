@@ -118,6 +118,40 @@ void making_password() {
             break;
         case 'd':
             printf("all options");
+
+            //new vars
+            int letter_count = 0;
+            int number_count = 0;
+            int spcial_charcater_count = 0;
+
+            //opening all files
+            char** letters = file_opener("data/alphabet.txt", &letter_count);
+            char** numbers = file_opener("data/numbers.txt", &number_count);
+            char** special = file_opener("data/special.txt", &spcial_charcater_count);
+
+            //for the length of the password
+            for (int i = 0; i < password_length; i++) {
+                //gets a random number from 1 - 3
+                int random_number = (rand() % 3) + 1;
+
+                //enters a switch statment
+                switch (random_number) {
+                    case 1:
+                        password[i] = random_item(letters, letter_count);
+                        break;
+
+                    case 2:
+                        password[i] = random_item(numbers, number_count);
+                        break;
+
+                    case 3:
+                        password[i] = random_item(special, spcial_charcater_count);
+                        break;
+                }
+            }
+            //returns the new password created
+            password[password_length] = '\0';
+            printf("Password: %s\n", password);
             break;
     }
 }
