@@ -11,11 +11,13 @@
 using namespace std;
 
 class genorator {
-    private:
+private:
     int password_length = 0;
     char password_option;
     vector<char> open_files(string file);
-    public:
+    string new_password(string password_type, int length, const vector<char>& items);
+
+public:
     void setting_length(int length);
     void setting_option(char option);
     void gen_password();
