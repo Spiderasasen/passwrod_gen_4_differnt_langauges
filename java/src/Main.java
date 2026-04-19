@@ -7,6 +7,9 @@ public class Main {
         //calling the scanner
         Scanner scan = new Scanner(System.in);
 
+        //calling the genorator
+        password_genoration pas = new password_genoration();
+
         //private vars
         int password_length = 0;
         char password_option;
@@ -38,5 +41,9 @@ public class Main {
             password_option = choice;
             break;
         }
+
+        //calling the setters
+        pas.setting_length(password_length);
+        pas.set_option(password_option);
     }
 }
