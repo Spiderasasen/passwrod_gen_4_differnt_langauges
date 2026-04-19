@@ -45,5 +45,6 @@ public class Main {
         //calling the setters
         pas.setting_length(password_length);
         pas.set_option(password_option);
+        pas.genoration();
     }
 }
