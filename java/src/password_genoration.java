@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Random;
 
 public class password_genoration {
     private int passwordLength = 0;
     private char passwordOption;
-    private String password;
+    private String password = "";
 
     //setters
     public void setting_length(int passwordLength){
@@ -33,12 +34,29 @@ public class password_genoration {
         return list;
     }
 
+    private String new_password(String password, int passwordLength, ArrayList<Character> list) {
+        Random rand = new Random();
+        StringBuilder passwordBuilder = new StringBuilder(password);
+        for (int i = 0; i < passwordLength; i++) {
+            int index = rand.nextInt(list.size());
+            passwordBuilder.append(list.get(index));
+        }
+        password = passwordBuilder.toString();
+        return password;
+    }
+
     public void genoration(){
         switch(passwordOption){
             case 'a':
                 System.out.println("letters only");
+
+                //opening a file
                 ArrayList<Character> list = opening_files("data/alphabet.txt");
-                System.out.println(list);
+
+                password = new_password(password, passwordLength, list);
+
+                System.out.println(password);
+
                 break;
             case 'b':
                 System.out.println("numbers only");
