@@ -59,6 +59,14 @@ char random_item(char** list, int count) {
     return list[index][0];
 }
 
+//adding items at the end of the password
+void fill_password(char* password, int length, char** list, int count) {
+    for (int i = 0; i < length; i++) {
+        password[i] = random_item(list, count);
+    }
+    password[length] = '\0';
+}
+
 
 //main password system
 void making_password() {
@@ -80,10 +88,7 @@ void making_password() {
             list = file_opener("data/alphabet.txt", &count);
 
             //places a random letter into the password
-            for (int i = 0; i < password_length; i++) {
-                password[i] = random_item(list, count);
-            }
-            password[password_length] = '\0';
+            fill_password(password, password_length, list, count);
 
             //prints out the password
             printf("Password: %s\n", password);
