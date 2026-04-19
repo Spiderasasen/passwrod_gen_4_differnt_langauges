@@ -12,10 +12,15 @@ using namespace std;
 
 class genorator {
 private:
+    //vars
     int password_length = 0;
     char password_option;
     vector<char> open_files(string file);
+    string password;
+
+    //files
     string new_password(string password_type, int length, const vector<char>& items);
+    string making_new_password(string type_password, int length, string file);
 
 public:
     void setting_length(int length);

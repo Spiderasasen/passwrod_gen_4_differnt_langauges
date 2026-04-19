@@ -57,16 +57,24 @@ string genorator::new_password(string password_type, int length, const vector<ch
     return password_type;
 }
 
+string genorator::making_new_password(string type_password, int length, string file) {
+    //opens the file
+    vector<char> items = open_files(file);
+
+    //appends to the password
+    type_password = new_password(type_password, length, items);
+
+    return type_password;
+}
+
 //main section for new password
 void genorator::gen_password() {
     switch (password_option) {
         case 'a': {
             cout << "letters only" << endl;
-            //opens the file
-            vector<char> items = open_files("data/alphabet.txt");
 
-            //appends to the password vector
-            password = new_password(password, password_length, items);
+            //calling the making a new password file
+            password = making_new_password(password, password_length, "data/alphabet.txt");
 
             cout << "Your Password: " << password << endl;
 
@@ -74,10 +82,20 @@ void genorator::gen_password() {
         }
         case 'b': {
             cout << "numbers only" << endl;
+
+            password = making_new_password(password, password_length, "data/numbers.txt");
+
+            cout << "Your Password: " << password << endl;
+
             break;
         }
         case 'c': {
             cout << "special chars only" << endl;
+
+            password = making_new_password(password, password_length, "data/numbers.txt");
+
+            cout << "Your Password: " << password << endl;
+
             break;
         }
         case 'd': {
