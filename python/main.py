@@ -5,7 +5,7 @@ def main():
     #private vars
     password_length: int = 0
     password_option = ''
-    options = {"a. Password of letters only", "b. Password or numbers only", "c. Password of spical characters", "d. Password with all"}
+    options = ["a. Password of letters only", "b. Password or numbers only", "c. Password of spical characters", "d. Password with all"]
 
     #checking if the length is a number
     while password_length == 0 or password_length < 0:
