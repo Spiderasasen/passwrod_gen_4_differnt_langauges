@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // vars
 var password_length_private int
@@ -18,7 +16,18 @@ func settingOptions(options string) {
 }
 
 func mainGen() {
-	fmt.Println(password_length_private)
-	fmt.Println(password_options_private)
-	fmt.Println(password)
+	switch password_options_private {
+	case "a":
+		fmt.Println("letters only")
+		break
+	case "b":
+		fmt.Println("numbers only")
+		break
+	case "c":
+		fmt.Println("symbols only")
+		break
+	case "d":
+		fmt.Println("all options")
+		break
+	}
 }

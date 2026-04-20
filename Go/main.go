@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -33,6 +34,7 @@ func main() {
 			fmt.Println(option)
 		}
 		fmt.Scan(&passwordOption)
+		passwordOption := strings.ToLower(passwordOption)
 		if !(passwordOption == "a" || passwordOption == "b" || passwordOption == "c" || passwordOption == "d") {
 			continue
 		}
