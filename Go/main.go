@@ -38,4 +38,11 @@ func main() {
 		}
 		break
 	}
+
+	//setting the functions
+	settingLength(passwordLength)
+	settingOptions(passwordOption)
+	//
+	////area to generate the password
+	mainGen()
 }
