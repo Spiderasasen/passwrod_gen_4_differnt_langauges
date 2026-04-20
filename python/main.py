@@ -1,3 +1,6 @@
+from python.password_gen import setting_length, setting_option, generate_password
+
+
 def main():
     #private vars
     password_length: int = 0
@@ -21,6 +24,11 @@ def main():
         if is_valid_option(password_option):
             password_option = ''
             continue
+
+        #calling the genorator
+        setting_length(password_length)
+        setting_option(password_option)
+        generate_password()
 
         break
 
