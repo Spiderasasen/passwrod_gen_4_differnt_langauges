@@ -66,3 +66,20 @@ def generate_password():
 
         case 'd':
             print("all elements")
+
+            #opening the files
+            letters = open_file("data/alphabet.txt")
+            numbers = open_file("data/numbers.txt")
+            special = open_file("data/special.txt")
+
+            for i in range(password_length):
+                rand: int = random.randint(1,3)
+                match rand:
+                    case 1:
+                        password = new_password(password, 1, letters)
+                    case 2:
+                        password = new_password(password, 1, numbers)
+                    case 3:
+                        password = new_password(password, 1, special)
+
+            print("New password:", password)
