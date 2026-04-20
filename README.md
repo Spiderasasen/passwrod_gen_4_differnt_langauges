@@ -1,5 +1,5 @@
-# Password Generator in 6 Languages
-This project will include 6 different programming languages to help me improve these languages, and also see how each language does the same project
+# Password Generator in 7 Languages
+This project will include 7 different programming languages to help me improve these languages, and also see how each language does the same project
 
 # Programming Languages
 - C
@@ -14,6 +14,8 @@ This project will include 6 different programming languages to help me improve t
   - Newest programming language that I know, and it will be very interesting to program in this one
 - Rust
   - i ony programmed in this language once, but I do want to try another small project on it again, that, and it teaches me more on the language again.
+- JavaScript
+  - I mainly use react, but why not use basic JS for fun to learn see the comparissons
 
  # The Idea
  A programming language that will be used to create a randomly generated language. from the length of the password and also including and excluding certain aspects of the password. For example, if the user only wants a password with only numbers and nothing else, that will be possible. If the user wants to have a password that has numbers, letters, and special characters, that is also possible.
