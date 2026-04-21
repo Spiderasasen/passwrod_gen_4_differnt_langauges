@@ -99,6 +99,40 @@ func mainGen() {
 		break
 	case "d":
 		fmt.Println("all options")
+
+		//opening the files
+
+		//opening the alphabet file
+		leters, letterErr := openingFile("../data/alphabet.txt")
+		if letterErr != nil {
+			fmt.Println(letterErr)
+		}
+
+		//opening the number files
+		numbers, numberErr := openingFile("../data/numbers.txt")
+		if numberErr != nil {
+			fmt.Println(numberErr)
+		}
+
+		//opening the special chars
+		special, specialErr := openingFile("../data/special.txt")
+		if specialErr != nil {
+			fmt.Println(specialErr)
+		}
+
+		for i := 0; i < password_length_private; i++ {
+			var randNum int = rand.Intn(3)
+			switch randNum {
+			case 0:
+				password = newPassword(password, 1, leters)
+			case 1:
+				password = newPassword(password, 1, numbers)
+			case 2:
+				password = newPassword(password, 1, special)
+			}
+		}
+		fmt.Println(password)
+
 		break
 	}
 }
