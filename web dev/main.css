@@ -1,0 +1,87 @@
+/* Reset some default spacing */
+body, h1, h2, div, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background + centering */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    color: #333;
+}
+
+/* Title styling */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #222;
+}
+
+/* Container for the form */
+div {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+/* Section headers */
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #0077ff;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+/* Password output box */
+#password_space {
+    margin-top: 30px;
+    padding: 15px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 50px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
