@@ -2,14 +2,16 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // vars
 var password_length_private int
 var password_options_private string
-var password string
+var password string = ""
 
 // setters
 func settingLength(length int) {
@@ -41,18 +43,35 @@ func opening_file(filename string) ([]string, error) {
 	return result, nil
 }
 
+// making the new password
+func new_password(pass string, length int, list []string) string {
+	var index int
+
+	for i := 0; i < length; i++ {
+		index = rand.Intn(len(list))
+		pass = pass + list[index]
+	}
+	return pass
+}
+
 // main function
 func mainGen() {
+	//setting the seed
+	rand.Seed(time.Now().UnixNano())
+
 	switch password_options_private {
 	case "a":
 		fmt.Println("letters only")
 
+		//allows me to use the list
 		items, err := opening_file("../data/alphabet.txt")
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		fmt.Println(items)
+		password = new_password(password, password_length_private, items)
+
+		fmt.Println("Your password: ", password)
 
 		break
 	case "b":
