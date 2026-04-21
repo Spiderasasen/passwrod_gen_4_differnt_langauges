@@ -5,8 +5,35 @@
     <title>Main</title>
 </head>
 <body>
+<!--title-->
     <div>
-        <h1>hello world</h1>
+        <h1>Password Generator</h1>
     </div>
+
+<!--input boxes-->
+    <div>
+<!--        for the length of the password-->
+        <div>
+            <h2>Please enter how long you want your password to be</h2>
+            <input type="number" id="password_length">
+        </div>
+
+<!--        for what type of password the user wants-->
+        <div>
+            <h2>Please choose an option</h2>
+            <select name="options" id="password_options">
+                <option value="n/a">Please select one option...</option>
+                <option value="a">a. A password with only letters</option>
+                <option value="b">b. A password with only numbers</option>
+                <option value="c">c. A password with only special characters</option>
+                <option value="d">d. All of the above</option>
+            </select>
+        </div>
+
+        <button id="submit">Submit</button>
+    </div>
+
+<!--where the password will be showing-->
+<div id="password_space"></div>
 </body>
 </html>
