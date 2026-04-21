@@ -22,7 +22,7 @@ func settingOptions(options string) {
 }
 
 // opening a file
-func opening_file(filename string) ([]string, error) {
+func openingFile(filename string) ([]string, error) {
 	data, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
@@ -44,13 +44,28 @@ func opening_file(filename string) ([]string, error) {
 }
 
 // making the new password
-func new_password(pass string, length int, list []string) string {
+func newPassword(pass string, length int, list []string) string {
 	var index int
 
 	for i := 0; i < length; i++ {
 		index = rand.Intn(len(list))
 		pass = pass + list[index]
 	}
+	return pass
+}
+
+// making a simple copier
+func copyNewPassword(pass string, length int, fileName string) string {
+	//opens a file
+	items, err := openingFile(fileName)
+
+	//if there is an error while opening it, it will yell
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	pass = newPassword(pass, length, items)
+
 	return pass
 }
 
@@ -63,22 +78,24 @@ func mainGen() {
 	case "a":
 		fmt.Println("letters only")
 
-		//allows me to use the list
-		items, err := opening_file("../data/alphabet.txt")
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		password = new_password(password, password_length_private, items)
+		password = copyNewPassword(password, password_length_private, "../data/alphabet.txt")
 
 		fmt.Println("Your password: ", password)
 
 		break
 	case "b":
 		fmt.Println("numbers only")
+
+		password = copyNewPassword(password, password_length_private, "../data/numbers.txt")
+		fmt.Println("Your password: ", password)
+
 		break
 	case "c":
 		fmt.Println("symbols only")
+
+		password = copyNewPassword(password, password_length_private, "../data/special.txt")
+		fmt.Println("Your password: ", password)
+
 		break
 	case "d":
 		fmt.Println("all options")
